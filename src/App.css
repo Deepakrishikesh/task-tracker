@@ -1,38 +1,72 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Stick&display=swap');
+
+*{
+  user-select: none;
+  cursor: default;
+}
+header{
+  font-family: 'Zen Dots',cursive;
   text-align: center;
+  font-size:x-large;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h3{
+  font-family: 'Stick', sans-serif;
+  /*font-family: 'Akaya Kanadaka', cursive;*/
+  width:fit-content;
+  position: relative;
+  margin-left: 10%;
+  font-size: xx-large;
+  cursor: default;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+form{
+  position: relative;
+  margin-top: 15px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+input{
+  font-size: large;
+  font-family: 'Akaya Kanadaka', cursive;
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10px;
+  border: 1px solid;
+  outline: none;
+  padding: 15px;
+  width: 60%;
+  cursor: auto;
+  user-select: text;
+}
+.btn{
+  /*background-color: black;*/
+  border: none;
+  position:relative;
+  margin-right: 2px;
   color: white;
+  font-size: large;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
 }
-
-.App-link {
-  color: #61dafb;
+.topright{
+  position:absolute;
+  right: 5px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tasks{ 
+  position: relative;
+  border-radius: 10px;
+  min-height: 100px;
+  margin: auto;
+  min-width: 70%;
+  width: fit-content;
+  border: 2px solid;
+  align-items: center;
+}
+.delbtn{
+  position: absolute;
+  right: 5px;
+}
+.strike{
+  text-decoration: line-through;
 }

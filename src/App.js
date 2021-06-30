@@ -1,23 +1,44 @@
-import logo from './logo.svg';
+import { useState } from "react";
+import Header from "./components/Header";
+import Tasks from "./components/Tasks";
 import './App.css';
-
 function App() {
+  //const name='Deepak'
+  //const x=true
+  const [tasks,setTasks] = useState([])
+
+  //add task
+  const addTask = (taskText) =>{
+    //console.log(task)
+    //console.log(tasks[tasks.length - 1].id)
+    //console.log(taskText.text)
+    const id = tasks.length>0 ? tasks[tasks.length - 1].id+1 : 1
+    const complete = false
+    //console.log(id)
+    const newTask = {id, ...taskText, complete}
+    setTasks([...tasks,newTask])
+  }
+
+  //delete task
+  const deleteTask = (id) =>{
+    setTasks(tasks.filter((task)=> task.id !== id))
+  }
+
+  //toggle task
+  const toggleTask = (id) =>{
+    setTasks(tasks.map((task) => 
+      task.id === id ? {...task, complete: !task.complete} : task
+    ))
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Tasks 
+        onAdd={addTask}
+        onDelete={deleteTask} 
+        toggle={toggleTask} 
+        tasks={tasks}/>
+         
     </div>
   );
 }
