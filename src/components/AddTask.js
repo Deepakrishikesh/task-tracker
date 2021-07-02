@@ -15,13 +15,14 @@ const AddTask = ({onAdd}) => {
         e.preventDefault()
         if(!text || !text.replace(/\s/g, '').length){
             alert('Please add task')
+            setText('')
             return
         }
         onAdd({text})
         setText('')
     }
     return (
-        <form onSubmit={onSubmit}>
+        <form style={{ marginBottom:'5%'}} onSubmit={onSubmit}>
             <input 
                 type='text' 
                 placeholder='Add Task'

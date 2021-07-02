@@ -12,22 +12,24 @@ const Tasks = ({tasks, onDelete, onAdd, toggle}) => {
     return (
         <div className="tasks">
             <AddTask onAdd={onAdd}/>
-            {tasks.length>0 ?
-                tasks.map((task)=>(
-                    <h3 
-                        className={`${task.complete ? 'strike' : null}`}
-                        key={task.id} 
-                        onDoubleClick={()=>toggle(task.id)}>
-                            {task.text}
+                {tasks.length>0 ?
+                    tasks.map((task)=>(
+                        <div key={task.id} className='center'>
+                            <h3 
+                                className={`${task.complete ? 'strike' : null}`} 
+                                onDoubleClick={()=>toggle(task.id)}>
+                                    {task.text}
+                            </h3> 
                             <FaTimes 
-                                style={{color:'red',position:'absolute',top:'0', fontSize:'large', cursor: 'pointer'}} 
-                                onClick={()=>onDelete(task.id)} 
+                                        className='delbtn'
+                                        onClick={()=>onDelete(task.id)} 
                             />
-                    </h3>  
-          ))
-        :
-                    <p style={{marginLeft: '10%'}}>No Tasks</p>
-        }  
+                        </div>
+            ))
+            :
+                       <div className='center'> <p style={{display:'flex', justifyContent:'center'}}>No Tasks</p> </div>
+
+            }   
         </div>
     )
 }

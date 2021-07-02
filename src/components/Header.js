@@ -10,6 +10,6 @@ import React from 'react';
      )
  }
  Header.defaultProps={
-     title:'Task Tracker'
+     title:'Task Manager'
  }
  export default Header

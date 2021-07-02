@@ -1,4 +1,5 @@
 import { useState } from "react";
+//import Responsive from 'react-responsive-decorator';
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import './App.css';
@@ -14,8 +15,9 @@ function App() {
     //console.log(taskText.text)
     const id = tasks.length>0 ? tasks[tasks.length - 1].id+1 : 1
     const complete = false
+    const text = taskText.text;
     //console.log(id)
-    const newTask = {id, ...taskText, complete}
+    const newTask = {id, text, complete}
     setTasks([...tasks,newTask])
   }
 

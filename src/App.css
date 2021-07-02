@@ -1,39 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Stick&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap');
 
 *{
   user-select: none;
   cursor: default;
 }
 header{
+  display: flex;
+  justify-content: center;
   font-family: 'Zen Dots',cursive;
   text-align: center;
   font-size:x-large;
 }
 h3{
-  font-family: 'Stick', sans-serif;
-  /*font-family: 'Akaya Kanadaka', cursive;*/
-  width:fit-content;
   position: relative;
-  margin-left: 10%;
-  font-size: xx-large;
+  font-family: 'Hachi Maru Pop', cursive;
+  font-weight: lighter;
+  /*font-family: 'Akaya Kanadaka', cursive;*/
+  font-size: large;
+  max-width: 80%;
+  left: 0;
   cursor: default;
+  word-wrap: break-word;
 }
 form{
+  display: flex;
+  justify-content: center;
   position: relative;
-  margin-top: 15px;
+  max-width: 80%;
+  margin: auto;
+  margin-top: 3%;
 }
 input{
   font-size: large;
-  font-family: 'Akaya Kanadaka', cursive;
+  font-family: cursive;
   position: relative;
-  margin-left: 10%;
-  margin-right: 10px;
   border: 1px solid;
   outline: none;
   padding: 15px;
   width: 60%;
+  margin-right: 2%;
   cursor: auto;
   user-select: text;
 }
@@ -41,7 +47,6 @@ input{
   /*background-color: black;*/
   border: none;
   position:relative;
-  margin-right: 2px;
   color: white;
   font-size: large;
   padding: 20px;
@@ -49,24 +54,34 @@ input{
   text-align: center;
   cursor: pointer;
 }
-.topright{
+/*.topright{
   position:absolute;
   right: 5px;
-}
+}*/
 .tasks{ 
   position: relative;
   border-radius: 10px;
-  min-height: 100px;
   margin: auto;
-  min-width: 70%;
-  width: fit-content;
+  margin-bottom: 20px;
+  width: 70%;
   border: 2px solid;
   align-items: center;
 }
 .delbtn{
-  position: absolute;
-  right: 5px;
+  color: red;
+  position: relative;
+  font-size: large;
+  cursor: pointer;
 }
 .strike{
   text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+}
+.center{
+  display: flex;
+  justify-self: center;
+  position: relative;
+  max-width: 70%;
+  margin: auto;
+  margin-bottom: 5px;
 }
