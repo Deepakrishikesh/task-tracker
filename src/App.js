@@ -38,9 +38,6 @@ function App() {
   }
  
   // change theme
-  const changeTheme =() =>{
-    setDark(!isDark)
-  }
   return (
     <div className={`${isDark?'dark-mode cover': null}`}>
       <Header />
@@ -48,7 +45,7 @@ function App() {
         className='topright' 
         checked={isDark}
         speed={2}
-        onChange={changeTheme} />
+        onChange={()=> setDark(!isDark)} /> 
       <Tasks 
         isDark={isDark}
         onAdd={addTask}
