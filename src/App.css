@@ -5,6 +5,15 @@
   user-select: none;
   cursor: default;
 }
+.cover{
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+}
+.dark-mode{
+  background-color: black;
+  color: white;
+}
 header{
   display: flex;
   justify-content: center;
@@ -33,9 +42,10 @@ form{
 }
 input{
   font-size: large;
-  font-family: cursive;
+  font-family:'Times New Roman', Times, serif;
   position: relative;
   border: 1px solid;
+  border-radius: 50px;
   outline: none;
   padding: 15px;
   width: 60%;
@@ -50,20 +60,22 @@ input{
   color: white;
   font-size: large;
   padding: 20px;
+  border: 1px solid;
   border-radius: 12px;
   text-align: center;
   cursor: pointer;
 }
-/*.topright{
-  position:absolute;
-  right: 5px;
-}*/
+.topright{
+  position: fixed;
+  top: 20px;
+  right: 10px;
+}
 .tasks{ 
   position: relative;
   border-radius: 10px;
   margin: auto;
   margin-bottom: 20px;
-  width: 70%;
+  width: 80%;
   border: 2px solid;
   align-items: center;
 }

@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import Button from './Button';
-const AddTask = ({onAdd}) => {
+const AddTask = ({onAdd, isDark}) => {
     const style ={
         position: 'relative',
         //top:'0',
@@ -24,6 +24,7 @@ const AddTask = ({onAdd}) => {
     return (
         <form style={{ marginBottom:'5%'}} onSubmit={onSubmit}>
             <input 
+                className={`${isDark?'dark-mode':null}`}
                 type='text' 
                 placeholder='Add Task'
                 value={text} 

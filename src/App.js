@@ -1,4 +1,5 @@
 import { useState } from "react";
+import DarkModeToggle from "react-dark-mode-toggle";
 //import Responsive from 'react-responsive-decorator';
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
@@ -6,7 +7,10 @@ import './App.css';
 function App() {
   //const name='Deepak'
   //const x=true
+  //detect theme
+  const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
   const [tasks,setTasks] = useState([])
+  const [isDark, setDark] = useState(darkTheme.matches)
 
   //add task
   const addTask = (taskText) =>{
@@ -32,15 +36,26 @@ function App() {
       task.id === id ? {...task, complete: !task.complete} : task
     ))
   }
+ 
+  // change theme
+  const changeTheme =() =>{
+    setDark(!isDark)
+  }
   return (
-    <div>
+    <div className={`${isDark?'dark-mode cover': null}`}>
       <Header />
+      <DarkModeToggle 
+        className='topright' 
+        checked={isDark}
+        speed={2}
+        onChange={changeTheme} />
       <Tasks 
+        isDark={isDark}
         onAdd={addTask}
         onDelete={deleteTask} 
         toggle={toggleTask} 
         tasks={tasks}/>
-         
+          
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { FaTimes } from 'react-icons/fa';
 //import Button from './Button';
 import AddTask from './AddTask';
-const Tasks = ({tasks, onDelete, onAdd, toggle}) => {
+const Tasks = ({tasks, onDelete, onAdd, toggle,isDark}) => {
     /*const style ={
         position: 'absolute',
         top:'2px',
@@ -11,7 +11,7 @@ const Tasks = ({tasks, onDelete, onAdd, toggle}) => {
     }*/
     return (
         <div className="tasks">
-            <AddTask onAdd={onAdd}/>
+            <AddTask isDark={isDark} onAdd={onAdd}/>
                 {tasks.length>0 ?
                     tasks.map((task)=>(
                         <div key={task.id} className='center'>
