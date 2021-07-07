@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DarkModeToggle from "react-dark-mode-toggle";
 //import Responsive from 'react-responsive-decorator';
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
+import dark_btn from "./components/theme-mode.png"
 import './App.css';
 function App() {
   //const name='Deepak'
@@ -11,7 +12,18 @@ function App() {
   const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
   const [tasks,setTasks] = useState([])
   const [isDark, setDark] = useState(darkTheme.matches)
+  const [windowSize,setWindowSize] = useState({width:window.innerWidth})
 
+  useEffect(()=>{
+    //To handle screen resize
+    const handleResize=()=>{
+      setWindowSize({width:window.innerWidth})
+    }
+    window.addEventListener('resize',handleResize)
+    return _ => {
+      window.removeEventListener('resize', handleResize)
+    }
+  })
   //add task
   const addTask = (taskText) =>{
     //console.log(task)
@@ -41,11 +53,18 @@ function App() {
   return (
     <div className={`${isDark?'dark-mode cover': null}`}>
       <Header />
-      <DarkModeToggle 
+      {windowSize.width>535 ? <DarkModeToggle 
         className='topright' 
         checked={isDark}
+        size='70px'
         speed={2}
         onChange={()=> setDark(!isDark)} /> 
+        : 
+        <img src={dark_btn}
+          alt='' 
+          className='rightBottom'
+          onClick={()=> setDark(!isDark)} />
+      }
       <Tasks 
         isDark={isDark}
         onAdd={addTask}

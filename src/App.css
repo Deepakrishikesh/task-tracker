@@ -12,14 +12,14 @@
 }
 .dark-mode{
   background-color: black;
-  color: white;
+  color: whitesmoke;
 }
 header{
   display: flex;
   justify-content: center;
   font-family: 'Zen Dots',cursive;
-  text-align: center;
-  font-size:x-large;
+  text-align: justify;
+  font-size: large;
 }
 h3{
   position: relative;
@@ -67,8 +67,21 @@ input{
 }
 .topright{
   position: fixed;
+  cursor: pointer;
   top: 20px;
   right: 10px;
+  z-index: 1;
+}
+.rightBottom{
+  background-color: white;
+  border-radius: 100%;
+  border: 2px solid;
+  position: fixed;
+  cursor: pointer;
+  bottom: 20px;
+  right: 10px;
+  width:40px;
+  z-index: 1;
 }
 .tasks{ 
   position: relative;
