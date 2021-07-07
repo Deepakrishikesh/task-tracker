@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/task-tracker/static/css/main.47d0ab6a.chunk.css",
-    "main.js": "/task-tracker/static/js/main.24ed391d.chunk.js",
-    "main.js.map": "/task-tracker/static/js/main.24ed391d.chunk.js.map",
+    "main.css": "/task-tracker/static/css/main.2dedeaf2.chunk.css",
+    "main.js": "/task-tracker/static/js/main.9ff00bf2.chunk.js",
+    "main.js.map": "/task-tracker/static/js/main.9ff00bf2.chunk.js.map",
     "runtime-main.js": "/task-tracker/static/js/runtime-main.0c55cbf2.js",
     "runtime-main.js.map": "/task-tracker/static/js/runtime-main.0c55cbf2.js.map",
     "static/js/2.30d24e05.chunk.js": "/task-tracker/static/js/2.30d24e05.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.c8604dc4.chunk.js": "/task-tracker/static/js/3.c8604dc4.chunk.js",
     "static/js/3.c8604dc4.chunk.js.map": "/task-tracker/static/js/3.c8604dc4.chunk.js.map",
     "index.html": "/task-tracker/index.html",
-    "static/css/main.47d0ab6a.chunk.css.map": "/task-tracker/static/css/main.47d0ab6a.chunk.css.map",
+    "static/css/main.2dedeaf2.chunk.css.map": "/task-tracker/static/css/main.2dedeaf2.chunk.css.map",
     "static/js/2.30d24e05.chunk.js.LICENSE.txt": "/task-tracker/static/js/2.30d24e05.chunk.js.LICENSE.txt",
     "static/media/theme-mode.511605fd.png": "/task-tracker/static/media/theme-mode.511605fd.png"
   },
   "entrypoints": [
     "static/js/runtime-main.0c55cbf2.js",
     "static/js/2.30d24e05.chunk.js",
-    "static/css/main.47d0ab6a.chunk.css",
-    "static/js/main.24ed391d.chunk.js"
+    "static/css/main.2dedeaf2.chunk.css",
+    "static/js/main.9ff00bf2.chunk.js"
   ]
 }
