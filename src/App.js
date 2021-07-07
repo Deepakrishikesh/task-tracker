@@ -29,7 +29,8 @@ function App() {
   //get theme preference from local storage
   useEffect(()=>{
     const theme = JSON.parse(localStorage.getItem(LOCAL_STORAGE_THEME))
-    setDark(theme)
+    if(theme!==null)
+      setDark(theme)
   },[])
 
   //store theme preference in local storage
