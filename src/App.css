@@ -97,6 +97,7 @@ input{
   width: 80%;
   border: 2px solid;
   align-items: center;
+  
 }
 .delbtn{
   color: red;
@@ -119,4 +120,5 @@ input{
   max-width: 70%;
   margin: auto;
   margin-bottom: 5px;
+  word-break: break-all;
 }

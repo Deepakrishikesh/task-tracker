@@ -29,8 +29,7 @@ const AddTask = ({onAdd, isDark}) => {
                 placeholder='Add Task'
                 value={text} 
                 onChange={(e) => setText(e.target.value)}/>
-            <Button 
-                className='btn'
+            <Button
                 styles={style} 
                 text='Add' />
         </form>

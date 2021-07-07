@@ -1,6 +1,7 @@
 import { FaTimes } from 'react-icons/fa';
 import Button from './Button';
 import AddTask from './AddTask';
+import React from 'react';
 const Tasks = ({tasks, onDelete, onAdd, clearAll, toggle,isDark}) => {
     const style ={
         position:'absolute',
@@ -30,8 +31,9 @@ const Tasks = ({tasks, onDelete, onAdd, clearAll, toggle,isDark}) => {
             :
                        <div className='center'> <p style={{display:'flex', justifyContent:'center'}}>No Tasks</p> </div>
 
-            } 
-            { tasks.length>0 ? <Button onClick={clearAll} text='Clear All' styles={style} />:null}
+            }
+            <div style={{marginBottom:'70px'}} />
+            { tasks.length>0 ? <Button onClick={clearAll} text='Clear All' styles={style} /> :null}
         </div>
     )
 }
