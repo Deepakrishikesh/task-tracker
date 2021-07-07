@@ -66,6 +66,9 @@ input{
   text-align: center;
   cursor: pointer;
 }
+.btn:active{
+  transform: translateY(3px);
+}
 .topright{
   position: fixed;
   cursor: pointer;
@@ -100,6 +103,10 @@ input{
   position: relative;
   font-size: large;
   cursor: pointer;
+}
+.delbtn:active{
+  transform: translateY(3px);
+  transform: scaleY(1.5);
 }
 .strike{
   text-decoration: line-through;

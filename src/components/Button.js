@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Button = ({styles,text}) => {
+const Button = ({styles,text,onClick}) => {
     /*const onClick= () => {
         alert(text,'clicked');
     }*/
@@ -8,7 +8,8 @@ const Button = ({styles,text}) => {
         <>
             <button 
                 style={styles} 
-                className='btn'> {text} 
+                className='btn'
+                onClick={onClick}> {text} 
             </button>
         </>
     )

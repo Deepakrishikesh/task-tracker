@@ -13,9 +13,10 @@ function App() {
   const [tasks,setTasks] = useState([])
   const [isDark, setDark] = useState(darkTheme.matches)
   const [windowSize,setWindowSize] = useState({width:window.innerWidth})
-
+  const LOCAL_STORAGE_TASKS='task_manager.tasks'
+  const LOCAL_STORAGE_THEME='task_manager.theme'
+  //To handle screen resize
   useEffect(()=>{
-    //To handle screen resize
     const handleResize=()=>{
       setWindowSize({width:window.innerWidth})
     }
@@ -23,7 +24,33 @@ function App() {
     return _ => {
       window.removeEventListener('resize', handleResize)
     }
-  })
+  },[])
+
+  //get theme preference from local storage
+  useEffect(()=>{
+    const theme = JSON.parse(localStorage.getItem(LOCAL_STORAGE_THEME))
+    setDark(theme)
+  },[])
+
+  //store theme preference in local storage
+  useEffect(()=>{
+    localStorage.setItem(LOCAL_STORAGE_THEME,JSON.stringify(isDark))
+  },[isDark])
+
+  //get from local storage
+  useEffect(()=>{
+    //console.log('get task')
+    const storedTasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_TASKS))
+    if(storedTasks)
+      setTasks(storedTasks)
+  },[])
+
+  //add to local storage
+  useEffect(()=>{
+    //console.log('store task')
+    localStorage.setItem(LOCAL_STORAGE_TASKS,JSON.stringify(tasks))
+  },[tasks])
+
   //add task
   const addTask = (taskText) =>{
     //console.log(task)
@@ -42,6 +69,13 @@ function App() {
     setTasks(tasks.filter((task)=> task.id !== id))
   }
 
+  //clear all task
+  const clearTask=()=>{
+    //console.log('inside clear all')
+    //const confirm = window.confirm("This will delete all your tasks")
+    if(window.confirm("This will delete all your tasks"))
+      setTasks([])
+  }
   //toggle task
   const toggleTask = (id) =>{
     setTasks(tasks.map((task) => 
@@ -68,7 +102,8 @@ function App() {
       <Tasks 
         isDark={isDark}
         onAdd={addTask}
-        onDelete={deleteTask} 
+        onDelete={deleteTask}
+        clearAll={clearTask} 
         toggle={toggleTask} 
         tasks={tasks}/>
           

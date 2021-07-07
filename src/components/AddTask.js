@@ -30,6 +30,7 @@ const AddTask = ({onAdd, isDark}) => {
                 value={text} 
                 onChange={(e) => setText(e.target.value)}/>
             <Button 
+                className='btn'
                 styles={style} 
                 text='Add' />
         </form>
