@@ -88,6 +88,7 @@ function App() {
   return (
     <div className={`${isDark?'dark-mode cover': null}`}>
       <Header />
+      
       {windowSize.width>535 ? <DarkModeToggle 
         className='topright' 
         checked={isDark}
@@ -100,6 +101,7 @@ function App() {
           className='rightBottom'
           onClick={()=> setDark(!isDark)} />
       }
+      
       <Tasks 
         isDark={isDark}
         onAdd={addTask}

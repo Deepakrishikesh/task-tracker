@@ -12,7 +12,7 @@
   min-height: 100%;
 }
 .dark-mode{
-  background-color: black;
+  background-color: rgb(30,30,30);
   color: whitesmoke;
 }
 header{
@@ -30,7 +30,8 @@ h3{
   font-size: large;
   max-width: 80%;
   left: 0;
-  cursor: default;
+  /* margin-left: 20px; */
+  cursor: inherit;
   word-wrap: break-word;
 }
 form{
@@ -55,7 +56,7 @@ input{
   user-select: text;
 }
 .btn{
-  /*background-color: black;*/
+  background-color: black;
   border: none;
   position:relative;
   color: white;
@@ -66,8 +67,9 @@ input{
   text-align: center;
   cursor: pointer;
 }
+
 .btn:active{
-  transform: translateY(3px);
+  transform: translateY(4px);
 }
 .topright{
   position: fixed;
@@ -75,7 +77,7 @@ input{
   top: 20px;
   right: 10px;
   z-index: 1;
-  user-select: none;
+  /* user-select: none; */
 }
 .rightBottom{
   background-color: white;
@@ -89,25 +91,26 @@ input{
   z-index: 1;
   user-select: none;
 }
+
 .tasks{ 
   position: relative;
   border-radius: 10px;
   margin: auto;
   margin-bottom: 20px;
-  width: 80%;
+  max-width: 80%;
   border: 2px solid;
   align-items: center;
   
 }
 .delbtn{
-  color: red;
+  color: rgb(225,50,35);
   position: relative;
   font-size: large;
-  cursor: pointer;
+  cursor: inherit;
 }
 .delbtn:active{
   transform: translateY(3px);
-  transform: scaleY(1.5);
+  /* transform: scaleY(1.5); */
 }
 .strike{
   text-decoration: line-through;
@@ -115,10 +118,43 @@ input{
 }
 .center{
   display: flex;
-  justify-self: center;
+  justify-content: center;
   position: relative;
+  padding: none;
+  border: 1px solid;
+  border-radius: 15px;
   max-width: 70%;
   margin: auto;
-  margin-bottom: 5px;
-  word-break: break-all;
+  margin-bottom: 20px;
+  hyphens: auto;
+  box-shadow: -5px 2px darkgrey;
+}
+
+@media(hover:hover){
+  .center:hover{
+    cursor: pointer;
+    border: none;
+    transform: translate(-5px);
+    box-shadow: -2px 2px darkgrey;
+    /* transform: scale(1,1.5); */
+  } 
+  .rightBottom:hover{
+    transform: scale(50px);
+  }
+  .btn:hover{
+    transform: translateY(2px);
+  }
+}
+
+@media(hover:none){
+  .center:active{
+    box-shadow: -2px 2px darkgrey;
+    transform: translate(-5px);
+  } 
+  .rightBottom:active{
+    transform: scale(50px);
+  }
+  .btn:active{
+    transform: translateY(2px);
+  }
 }
