@@ -127,6 +127,8 @@ input{
   margin: auto;
   margin-bottom: 20px;
   hyphens: auto;
+  word-break: break-all;
+  line-break: strict;
   box-shadow: -5px 2px darkgrey;
 }
 
