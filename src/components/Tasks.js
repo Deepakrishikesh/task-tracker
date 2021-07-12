@@ -1,7 +1,7 @@
 // import { useState } from 'react';
-import { isMobile } from 'react-device-detect';
+//import { isMobile } from 'react-device-detect';
 import { FaTimes } from 'react-icons/fa';
-import { useDoubleTap } from 'use-double-tap';
+//import { useDoubleTap } from 'use-double-tap';
 import Button from './Button';
 import AddTask from './AddTask';
 import React from 'react';
@@ -15,10 +15,10 @@ const Tasks = ({tasks, onDelete, onAdd, clearAll, toggle,isDark}) => {
         padding: '15px'
     }
     // const [currentTask,setCurrentTask]=useState({})
-    const doubleTap = useDoubleTap(() => {
-        //toggle(this.id);
-        alert('This operation is not yet complete. Stay tuned.')
-      } , 300)
+    // const doubleTap = useDoubleTap(() => {
+    //     //toggle(this.id);
+    //     alert('This operation is not yet complete. Stay tuned.')
+    //   } , 300)
     return (
         <div className="tasks">
             <AddTask isDark={isDark} onAdd={onAdd}/>
@@ -28,7 +28,6 @@ const Tasks = ({tasks, onDelete, onAdd, clearAll, toggle,isDark}) => {
                         <div key={task.id} 
                             className='center' 
                             onDoubleClick={()=>toggle(task.id)}
-                            {...isMobile ? {...doubleTap} : null}
                             >
                             <h3 
                                 className={`${task.complete ? 'strike' : null}`} >
